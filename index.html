@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Library</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+        #dis-genre-count{
+            margin: 40px;
+            text-align:justify;
+            font-size: large;
+        }
+        #display {
+            margin: 40px;
+            padding: 10px;
+            text-align:justify;
+            font-size: large;
+        }
+        #title {
+            margin-right: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="search">
+            <h1>Movie Library</h1>
+            <div class="inputs">
+                <label> Movie : </label>
+                <input type="search" placeholder="enter movie name.." id="title" />
+                <label>Genre : </label>
+                <input type="search" placeholder="enter genre.." id="genre" />
+            </div>
+        </div>
+        <div class="options"><select id="search">
+                <option > Search </option>
+                <option onchange="searchByTitle()" id="option-title"> Search by title</option>
+                <option onchange="searchByGenre()" id="option-genre"> Search by Genre</option>
+                <option onchange="searchByBoth()"> Search by Both</option>
+            </select>
+            <button onclick="sortByTitle()"> Sort Title </button>
+            <button onclick="sortByGenre()"> Sort Genre </button>
+
+        </div>
+    </section>
+    <div id="display">
+        <ul id="list"></ul>
+    </div>
+    <div id="dis-genre-count">
+        Count of Movies based on Genre :
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
